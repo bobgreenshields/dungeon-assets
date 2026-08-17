@@ -14,6 +14,10 @@
   .card { background: #fffdf9; border-radius: 10px; overflow: hidden; border: 1px solid #ded4c2; cursor: pointer; box-shadow: 0 1px 3px rgba(60,45,20,0.06); }
   .card:hover { border-color: #c97a3f; }
   .art-placeholder { width: 100%; height: 130px; background: #ece5d6; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #8a7f6a; text-align: center; padding: 0 10px; }
+  #about-modal { display: none; position: fixed; inset: 0; background: rgba(40,32,18,0.5); z-index: 1000; align-items: center; justify-content: center; }
+  #about-modal.open { display: flex; }
+  #about-modal .box { background: #fffdf9; border-radius: 10px; padding: 28px 32px; max-width: 360px; box-shadow: 0 8px 30px rgba(0,0,0,0.25); }
+  #about-modal .close { display: inline-block; margin-top: 18px; font-size: 13px; font-weight: 600; color: #a8602e; cursor: pointer; }
 </style>
 </head>
 <body>
@@ -33,7 +37,7 @@
   <div style="height:60px; background:#fffdf9; display:flex; align-items:center; gap:28px; padding:0 28px; border-bottom:1px solid #e6ddc9; border-radius:4px 4px 0 0;">
     <div style="font-family:'Spectral',serif; font-weight:600; font-size:19px; color:#3c3320; white-space:nowrap;">Dungeon Assets</div>
     <div style="display:flex; gap:22px; font-size:15px; color:#8a7f6a; font-weight:500; margin-left:auto;">
-      <a href="#">About</a>
+      <a href="#" id="about-link">About</a>
     </div>
   </div>
 
@@ -50,6 +54,27 @@
 </div>
 </div>
 
+<div id="about-modal">
+  <div class="box">
+    <div style="font-family:'Spectral',serif; font-weight:600; font-size:17px; color:#3c3320; margin-bottom:10px;">About</div>
+    <div style="font-size:14px; color:#5a4d33; line-height:1.5;">A website hosting assets for Bob's dungeons.</div>
+    <div class="close" id="about-close">Close</div>
+  </div>
+</div>
+
+<script>
+  var aboutModal = document.getElementById('about-modal');
+  document.getElementById('about-link').addEventListener('click', function(e) {
+    e.preventDefault();
+    aboutModal.classList.add('open');
+  });
+  document.getElementById('about-close').addEventListener('click', function() {
+    aboutModal.classList.remove('open');
+  });
+  aboutModal.addEventListener('click', function(e) {
+    if (e.target === aboutModal) aboutModal.classList.remove('open');
+  });
+</script>
 <script>
   function scaleToFit() {
     var scaler = document.querySelector('.scaler');
