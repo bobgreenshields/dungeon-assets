@@ -14,6 +14,9 @@
   .thumb-card { background: #fffdf9; border-radius: 10px; overflow: hidden; border: 1px solid #ded4c2; cursor: pointer; box-shadow: 0 1px 3px rgba(60,45,20,0.06); }
   .thumb-card:hover { border-color: #c97a3f; }
   .thumb-box { width: 100%; height: 180px; }
+  .pdf-card { background: #fffdf9; border-radius: 10px; overflow: hidden; border: 1px solid #ded4c2; box-shadow: 0 1px 3px rgba(60,45,20,0.06); display: block; }
+  .pdf-card:hover { border-color: #c97a3f; }
+  .pdf-icon { width: 100%; height: 100px; background: #ece5d6; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #a8602e; letter-spacing: 0.04em; }
   #lightbox { display: none; position: fixed; inset: 0; background: rgba(40,32,18,0.82); z-index: 1000; align-items: center; justify-content: center; cursor: zoom-out; }
   #lightbox.open { display: flex; }
   #lightbox img { max-width: 90vw; max-height: 90vh; border-radius: 6px; box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
@@ -36,8 +39,8 @@
   </div>
 
   <div style="padding:20px 28px 28px;">
-    <div style="font-family:'Spectral',serif; font-weight:700; font-size:24px; color:#3c3320; margin-bottom:4px;">Sewers of Kadar</div>
-    <div style="font-size:13px; color:#8a7f6a; margin-bottom:20px;">area-maps &middot; 5 files</div>
+    <div style="font-family:'Spectral',serif; font-weight:700; font-size:32px; color:#3c3320; margin-bottom:4px;">Sewers of Kadar</div>
+    <div style="font-size:16px; color:#8a7f6a; margin-bottom:20px;">area-maps &middot; 5 files</div>
     <div style="display:grid; grid-template-columns:repeat(5, 1fr); gap:18px;">
       <div class="thumb-card" data-full="area-maps/00.png" data-name="00.png">
         <img class="thumb-box" src="area-maps/00.png" alt="00.png" style="object-fit:cover; display:block;">
@@ -59,6 +62,14 @@
         <img class="thumb-box" src="area-maps/04.png" alt="04.png" style="object-fit:cover; display:block;">
         <div style="padding:10px 12px; font-size:13px; font-weight:600; color:#3c3320;">04.png</div>
       </div>
+    </div>
+
+    <div style="font-size:16px; color:#8a7f6a; margin:32px 0 20px;">pdfs &middot; 1 file</div>
+    <div style="display:grid; grid-template-columns:repeat(5, 1fr); gap:18px;">
+      <a class="pdf-card" href="pdfs/gakrern-letter.pdf" target="_blank">
+        <div class="pdf-icon">PDF</div>
+        <div style="padding:10px 12px; font-size:13px; font-weight:600; color:#3c3320;">gakrern-letter.pdf</div>
+      </a>
     </div>
   </div>
 </div>
