@@ -75,8 +75,6 @@
 </div>
 </div>
 
-<div id="lightbox"><img id="lightbox-img" src="" alt=""></div>
-
 <script>
   function scaleToFit() {
     var scaler = document.querySelector('.scaler');
@@ -87,19 +85,10 @@
   window.addEventListener('resize', scaleToFit);
   scaleToFit();
 
-  var lightbox = document.getElementById('lightbox');
-  var lightboxImg = document.getElementById('lightbox-img');
   document.querySelectorAll('.thumb-card').forEach(function(card) {
-    card.addEventListener('click', function(e) {
-      if (e.target.closest('image-slot') && e.target.closest('image-slot').hasAttribute('data-editing')) return;
-      lightboxImg.src = card.getAttribute('data-full');
-      lightboxImg.alt = card.getAttribute('data-name');
-      lightbox.classList.add('open');
+    card.addEventListener('click', function() {
+      window.location.href = card.getAttribute('data-full');
     });
-  });
-  lightbox.addEventListener('click', function() {
-    lightbox.classList.remove('open');
-    lightboxImg.src = '';
   });
 </script>
 </body>
